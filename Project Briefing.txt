@@ -1,0 +1,232 @@
+# HOF Website Redesign — Contractor Brief
+
+## The Job in One Sentence
+
+Restyle a single-page static HTML site to look and feel like two reference sites — fully responsive across desktop, tablet, and mobile — using the same content and images that already exist.
+
+---
+
+## What You're Working With
+
+| Item | Detail |
+|------|--------|
+| **Live site** | [www.hofcriteria.com](https://www.hofcriteria.com) |
+| **Hosting** | Netlify (static deploy) |
+| **Current code** | Single HTML file with inline CSS |
+| **Images** | Hosted on ImageKit.io — use the same URLs |
+| **Map image** | Hosted on hanoverco.com — use the same URL |
+| **Logos** | Hosted on hanoverco.com — use the same URL |
+
+**You will not need a CMS, database, build tools, or JavaScript framework.** The deliverable is a single HTML file (with CSS inline or in a separate stylesheet) that I deploy to Netlify.
+
+---
+
+## The Two Reference Sites — "Make It Look Like These"
+
+### Reference 1: [homesteadcapital.com](https://www.homesteadcapital.com/)
+**Use this for:** overall visual tone — typography, color palette, spacing, section transitions, stat bar layout, institutional feel.
+
+What I like about it:
+- Muted, earthy color palette (cream, gray-green, charcoal)
+- Clean sans-serif typography with generous white space
+- Stat bar with big numbers ($1.6bn, 4 Funds, ~101K Acres, etc.)
+- Custom arrow/divider graphic elements between sections
+- Professional, calm, confident feel
+- **Look at how this site works on mobile** — the sections stack cleanly and remain readable
+
+### Reference 2: [peaceablestreet.com](https://peaceablestreet.com/)
+**Use this for:** section structure and content flow — how they present who they are, track record stats, partner logos, and the clean CRE-fund feel.
+
+What I like about it:
+- Dark header/hero with clean white text
+- "Track Record" stat bar ($3.9B, 80 Deals, 118 Properties)
+- Clean section separation
+- Professional team section
+- Simple footer with navigation
+
+**Look at BOTH reference sites on your phone before you start designing.** The mobile experience is just as important as desktop.
+
+---
+
+## IMPORTANT: What NOT to Change
+
+1. **Keep the multi-image layout at the top.** I do NOT want one big hero image like Homestead or Peaceable Street have. My current site shows multiple property images (land, retail, office, campus) — keep that grid/carousel approach. Just make it look better.
+2. **Keep ALL existing text content exactly as-is.** Do not rewrite any copy.
+3. **Keep ALL existing images.** Use the same ImageKit URLs. Do not download or re-host images.
+4. **Keep the same page sections in the same order:**
+   - Logo + Fund name
+   - Headline + subtitle
+   - Property images
+   - Acquisition Criteria
+   - Target Markets (with map)
+   - Team / Connecting
+   - Footer with press release link + logo
+
+---
+
+## What TO Change (the actual work)
+
+### 1. Typography
+- Replace current fonts with a clean, institutional sans-serif (e.g., Inter, DM Sans, or similar Google Font)
+- Increase type hierarchy contrast — the headline should feel bold and dominant, subheads should be clearly distinct from body text
+- Reference Homestead's typography for the right feel
+- **Minimum body text size: 16px on mobile.** No tiny text on phones.
+
+### 2. Color Palette
+- Move to a more muted, institutional palette — think navy/charcoal/slate with warm accent
+- No bright colors. This should feel like a serious real estate fund, not a tech startup
+- Reference Homestead (cream/gray/charcoal) or Peaceable Street (navy/white/gold)
+- **Ensure sufficient contrast** between text and backgrounds (WCAG AA minimum)
+
+### 3. Spacing and Layout
+- Add significantly more white space between sections
+- Each section should feel like a distinct "page" when scrolling
+- Use full-width section backgrounds (alternating light/dark) to separate sections, similar to both reference sites
+
+### 4. Stat Bar
+- Add a prominent stat bar somewhere near the top of the page (similar to Homestead's or Peaceable Street's)
+- Stats to display: **$125M** (Fund Size) · **$3M–$20M+** (Deal Size) · **19** (Target Markets)
+- Big numbers, small labels underneath. This is a key visual element.
+- **On mobile:** stats should stack vertically or wrap into a 2-column grid — do NOT let them shrink to unreadable size
+
+### 5. Property Image Grid
+- Keep multiple images but style them into a clean, polished grid or mosaic layout
+- Consider subtle hover effects or image overlays with property type labels (desktop only — no hover on mobile)
+- No image carousel/slider is required — a static grid is fine
+- **On mobile:** images should stack or reflow into a single column. They must not overflow the screen or require horizontal scrolling.
+
+### 6. Acquisition Criteria Section
+- Present the criteria (Location, Property Type, Deal Size) in a more visual/card-based layout
+- Think Homestead's expandable list items or Peaceable Street's clean section blocks
+- Each criterion should feel like its own distinct element, not just text paragraphs
+- **On mobile:** cards should stack vertically, full-width
+
+### 7. Target Markets Section
+- Give the map image more visual prominence
+- Consider placing market lists below or beside the map in a cleaner layout
+- Markets should be scannable — possibly as pills/tags or a two-column layout
+- **On mobile:** the map image must scale down and remain legible. If the text on the map becomes unreadable at phone widths, place the map as a full-width image that the user can pinch-to-zoom, or consider listing the markets as text beneath a smaller map.
+
+### 8. Team / Contact Section
+- Clean, centered layout with headshots, names, and email links
+- Reference Peaceable Street's team presentation
+- Headshots should be the same size, circular or rounded-square crop
+- **On mobile:** team members should stack vertically, centered
+
+### 9. Footer
+- Simple, clean footer with Hanover logo, press release link, and any legal text
+- Dark background preferred
+
+---
+
+## Mobile & Responsive Requirements (CRITICAL)
+
+**This site will be shared primarily via email with brokers and property owners who will open it on their phones.** The mobile experience is not secondary — it is equally important to desktop.
+
+### Breakpoints
+Design for at least three breakpoints:
+- **Desktop:** 1024px and above
+- **Tablet:** 768px–1023px
+- **Mobile:** below 768px
+
+### Mobile-Specific Rules
+- **No horizontal scrolling.** Nothing should overflow the viewport width. Ever.
+- **Minimum tap target size: 44x44px** for all links, buttons, and email addresses. Brokers will tap these with their thumbs.
+- **Email links must use `mailto:`** so they open the user's email app on tap.
+- **Press release link must open in a new tab** (`target="_blank"` with `rel="noopener"`).
+- **Font sizes:** Minimum 16px body text on mobile. Headlines can scale down but must remain readable without zooming.
+- **Images must be responsive** — use `max-width: 100%; height: auto;` as a baseline. No fixed-width images.
+- **The map image is the trickiest element on mobile.** Test this specifically. If the map text (city names) becomes unreadable when scaled to phone width, add the market list as readable text below the map.
+- **No hover-dependent interactions.** Anything revealed on hover (tooltips, image overlays, etc.) must have an alternative on touch devices, or simply be visible by default on mobile.
+- **Test on a real phone** (not just browser resize). Open the page on an actual iPhone and Android device before delivering.
+
+---
+
+## Functional Requirements
+
+### Links and Contact
+- **Email addresses** must be wrapped in `<a href="mailto:...">` tags
+- **Press release link** must open in a new tab
+- **Hanover logo** (top and bottom) must link to https://www.hanoverco.com and open in a new tab
+- Verify all links work after redesign
+
+### Meta Tags and SEO
+Include these in the `<head>`:
+- `<title>` — "Hanover Opportunities Fund | $125M for Land & Commercial Acquisitions"
+- `<meta name="description">` — brief summary of the fund's acquisition criteria
+- `<meta name="viewport" content="width=device-width, initial-scale=1">` — **critical for mobile rendering**
+- **Open Graph tags** (`og:title`, `og:description`, `og:image`) so the page previews well when the URL is shared in email, LinkedIn, or text messages. Use the Hanover logo or the map image as the `og:image`.
+
+### Favicon
+- Add a favicon. Use the Hanover "H" from the logo or a simple branded icon. Provide as both `.ico` and `.png` (for Apple touch icon). If you can't extract one from the logo, a simple navy square with a white "H" is fine.
+
+### Performance
+- **Page load under 3 seconds on a 4G mobile connection.** This is a simple page — there's no reason it should be slow.
+- Use `loading="lazy"` on images below the fold
+- Optimize CSS — no unused frameworks or libraries. If you use a utility framework like Tailwind, purge unused classes.
+- Google Fonts: load only the weights you actually use (don't import the entire family)
+
+### Browser Compatibility
+Must work correctly on:
+- Chrome (desktop + mobile)
+- Safari (desktop + iOS)
+- Firefox (desktop)
+- Edge (desktop)
+- Samsung Internet (mobile)
+
+**Safari on iOS is the most important mobile browser to test.** Most of the people viewing this site on their phones will be on iPhones.
+
+### Accessibility Basics
+- All images must have `alt` text (the current site already has this — preserve it)
+- Sufficient color contrast (WCAG AA: 4.5:1 for body text, 3:1 for large text)
+- Page should be navigable with keyboard (tab through links)
+- Use semantic HTML (`<header>`, `<main>`, `<section>`, `<footer>`, `<h1>`–`<h3>`)
+
+---
+
+## Technical Requirements
+
+- **Single HTML file** (CSS can be inline or a separate `.css` file)
+- **No JavaScript frameworks** (React, Vue, etc.) — vanilla JS only if needed (e.g., for a simple scroll animation)
+- **Google Fonts only** (no paid font licenses)
+- **All images stay on ImageKit.io and hanoverco.com** — do not download and re-host
+- **Deploy-ready for Netlify** — I will push the file(s) to my repo
+- **Clean, readable code** — properly indented, with comments on major sections so I can make small text edits myself in the future
+
+---
+
+## Deliverable
+
+A ZIP file or GitHub repo containing:
+- `index.html` (the redesigned page)
+- `style.css` (if using external stylesheet)
+- `favicon.ico` and `favicon.png` (or `apple-touch-icon.png`)
+- No other files unless absolutely necessary
+- A brief note confirming you tested on:
+  - Desktop Chrome
+  - iPhone Safari (or iOS simulator)
+  - One Android browser
+
+---
+
+## Timeline
+
+2–4 days from mockup approval.
+
+### Milestones
+1. **Mockup (Day 1–2):** Deliver a visual mockup (Figma, Canva, screenshot — whatever you prefer) showing the full page layout at desktop AND mobile widths. I approve or request changes before you code.
+2. **Coded deliverable (Day 3–5):** Final HTML/CSS files, tested on desktop and mobile, deploy-ready.
+
+---
+
+## How I'll Evaluate Your Work
+
+I will check these things, in this order:
+
+1. **Mobile experience.** I will open the site on my phone first. If it doesn't look great on mobile, the project is not done.
+2. **Does it look/feel like the two reference sites?** The overall visual tone should feel institutional, polished, and confident — like Homestead Capital and Peaceable Street.
+3. **Is all the original content preserved exactly?** No missing text, no rewritten copy, no missing images.
+4. **Does the stat bar pop?** The $125M / $3M–$20M+ / 19 Markets numbers should be visually prominent.
+5. **Do all links work?** Emails open mail app, press release opens in new tab, logo links to hanoverco.com.
+6. **Is the code clean?** Can I open the HTML and make a simple text edit (e.g., change a market name) without breaking anything?
+7. **Page speed.** Loads fast on mobile.
