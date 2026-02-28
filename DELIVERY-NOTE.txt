@@ -1,0 +1,30 @@
+Hanover Opportunities Fund — Redesign Deliverable
+=================================================
+
+INCLUDED FILES
+--------------
+- index.html  (main page)
+- style.css   (stylesheet)
+- DELIVERY-NOTE.txt (this file)
+
+FAVICON
+-------
+Favicons are loaded from Hanover Company's CDN in the HTML <head>:
+- Favicon: https://www.hanoverco.com/wp-content/uploads/2025/01/hanover-company-corporate-favicon.png
+- Apple touch icon: https://www.hanoverco.com/wp-content/uploads/2025/01/hanover-company-corporate-apple-touch-icon.png
+
+If you need local favicon.ico and favicon.png files, download them from those URLs.
+
+TESTING CONFIRMATION
+--------------------
+Please test the site on:
+- Desktop Chrome
+- iPhone Safari (or iOS simulator)
+- One Android browser (e.g., Samsung Internet, Chrome)
+
+Verify:
+- No horizontal scrolling on mobile
+- All links work (emails open mail app, press release opens in new tab, logos link to hanoverco.com)
+- Images load correctly
+- Stat bar displays prominently
+- Page loads quickly

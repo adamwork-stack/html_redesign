@@ -1,0 +1,509 @@
+/*
+ * Hanover Opportunities Fund — Site Styles
+ * Institutional palette, Homestead/Peaceable Street inspired
+ * Breakpoints: Desktop 1024px+, Tablet 768–1023px, Mobile <768px
+ */
+
+/* ========== RESET & BASE ========== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7f5f0;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ========== LAYOUT UTILITIES ========== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Alternating section backgrounds */
+.section-light {
+    background-color: #f7f5f0;
+}
+
+.section-dark {
+    background-color: #e8e6e1;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(247, 245, 240, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(45, 55, 72, 0.08);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fund-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.logo-link {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+}
+
+.logo {
+    height: 2.5rem;
+    width: auto;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+    padding: 7rem 0 4rem;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 8rem 0 5rem;
+    }
+}
+
+.hero-headline {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1e3a5f;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin: 0 0 3rem;
+    max-width: 32rem;
+}
+
+/* ========== STAT BAR ========== */
+.stat-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+    border-top: 1px solid rgba(45, 55, 72, 0.12);
+    border-bottom: 1px solid rgba(45, 55, 72, 0.12);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.stat-number {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1e3a5f;
+    letter-spacing: -0.02em;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(45, 55, 72, 0.2);
+}
+
+@media (max-width: 767px) {
+    .stat-bar {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .stat-divider {
+        width: 3rem;
+        height: 1px;
+    }
+}
+
+/* ========== PROPERTY IMAGE GRID ========== */
+.property-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .property-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+.property-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.property-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.property-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(transparent, rgba(30, 58, 95, 0.85));
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .property-label {
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+
+    .property-card:hover .property-label {
+        opacity: 1;
+    }
+}
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: #1e3a5f;
+    text-align: center;
+    margin: 0 0 3rem;
+    letter-spacing: -0.02em;
+}
+
+/* ========== ACQUISITION CRITERIA ========== */
+.criteria-section {
+    padding: 5rem 0;
+}
+
+.criteria-cards {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .criteria-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.criteria-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.criteria-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1e3a5f;
+    margin: 0 0 0.75rem;
+}
+
+.criteria-text {
+    font-size: 1rem;
+    color: #2d3748;
+    margin: 0 0 0.75rem;
+}
+
+.criteria-text:last-child {
+    margin-bottom: 0;
+}
+
+.criteria-accent {
+    font-style: italic;
+    color: #1e3a5f;
+    font-weight: 500;
+}
+
+/* ========== TARGET MARKETS ========== */
+.markets-section {
+    padding: 5rem 0;
+}
+
+.markets-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .markets-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+}
+
+.map-wrapper {
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .map-wrapper {
+        width: 45%;
+        max-width: 500px;
+    }
+}
+
+.map-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.markets-lists {
+    flex: 1;
+}
+
+.market-group {
+    margin-bottom: 1.5rem;
+}
+
+.market-group:last-child {
+    margin-bottom: 0;
+}
+
+.market-heading {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1e3a5f;
+    margin: 0 0 0.75rem;
+}
+
+.market-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pill {
+    display: inline-block;
+    font-size: 0.9375rem;
+    padding: 0.4rem 0.75rem;
+    background: rgba(30, 58, 95, 0.08);
+    color: #1e3a5f;
+    border-radius: 9999px;
+}
+
+/* ========== TEAM SECTION ========== */
+.team-section {
+    padding: 5rem 0;
+}
+
+.team-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 4px solid white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.team-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem;
+}
+
+.team-email {
+    display: inline-block;
+    font-size: 1rem;
+    color: #2d3748;
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    min-width: 44px;
+    transition: color 0.2s;
+}
+
+.team-email:hover {
+    color: #1e3a5f;
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    background: #1e3a5f;
+    padding: 2.5rem 0;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-inner {
+        flex-direction: row;
+    }
+}
+
+.footer-press {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.footer-press a {
+    color: #c9b896;
+    text-decoration: underline;
+    padding: 0.5rem;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-block;
+}
+
+.footer-press a:hover {
+    color: #e5d4a8;
+}
+
+.footer-logo-link {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+}
+
+.footer-logo {
+    height: 2rem;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+@media (min-width: 768px) {
+    .footer-logo {
+        height: 2.5rem;
+    }
+}
+
+/* ========== MOBILE SPECIFIC ========== */
+@media (max-width: 767px) {
+    .hero-section {
+        padding-top: 6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .criteria-section,
+    .markets-section,
+    .team-section {
+        padding: 3rem 0;
+    }
+
+    .property-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .property-card:nth-child(3),
+    .property-card:nth-child(4) {
+        grid-column: span 1;
+    }
+}
+
+/* ========== ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
